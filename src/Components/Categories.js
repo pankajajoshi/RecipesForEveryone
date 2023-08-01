@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 const Categories = ({categorList}) => {
-    console.log('in categories: ', categorList);
+    console.log('in component categories: ', categorList);
     const categories = categorList.categories;
     return(
         <>
@@ -21,7 +21,6 @@ const Categories = ({categorList}) => {
                             </div>
                         </Link>
                     )
-
                 })
             ):"Not Found"
         }
