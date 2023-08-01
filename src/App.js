@@ -1,4 +1,5 @@
 import './App.css';
+import './style.css';
 // react router dom
 import {
   BrowserRouter,
@@ -6,7 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import axios from "axios";
-import Categories from "./Components/Categories";
+import CategoryPage from "./pages/CategoryPage";
 import React, { useEffect, useState } from "react";
 
 function App() {
@@ -22,11 +23,11 @@ function App() {
   }, []);
   
   if(!isLoading) {
-    console.log('is loading is true');
     return (
       <BrowserRouter>
         <Routes>
-          <Route path = "/" element = {<Categories categorList={categories}/>} />
+          <Route path = "/" element = {<CategoryPage categorList={categories}/>} />
+          {/* <Route path = "/meal/category/:name" element = {<Category />} /> */}
         </Routes>
       </BrowserRouter>
     );

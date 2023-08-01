@@ -1,32 +1,31 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const Categories = ({categorList}) => {
     console.log('in categories: ', categorList);
     const categories = categorList.categories;
     return(
         <>
+        <div className="container">
         {
             categories ? (
-                categories.map((Categories,index)=>{
+                categories.map((category,index)=>{
+                    const { idCategory: id, strCategory: title, strCategoryThumb: thumbnail} = category;
                     return(
-                        <div className="card" key={index}>
-                            <img src={Categories.strCategoryThumb}
-                                alt={Categories.strCategory} />
-                            <div className="meal-info"></div>
-                            <h4>{Categories.strCategory}</h4>
-                         
-                        </div>
-                        
-
+                        <Link to = {`/meal/category/${title}`} className = "category-itm align-center justify-center" key = {id}>
+                            <div className='category-itm-img h-100 w-100 flex align-center justify-center'>
+                            <img src = {thumbnail} alt = {title} />
+                            <div className='category-itm-title bg-orange'>
+                                <h3 className='text-white fs-11 fw-6 ls-1 text-uppercase'>{title}</h3>
+                            </div>
+                            </div>
+                        </Link>
                     )
 
                 })
             ):"Not Found"
-
-        
         }
-       
+       </div>
         </>
     )
 } 
