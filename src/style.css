@@ -27,7 +27,7 @@ body{
  z-index:12;
  background-image: url("./Components/bg1.png");
  font-size: 20px;
- background-size: cover;
+ background-size:contain;
 
 }
 .header .search-box input{
@@ -72,8 +72,12 @@ margin-top: 20%;
 }
 .meal-row .text-heading{
   margin-left:20rem;
-  margin-top: 1rem;
+  margin-top: 18rem;
+  padding:0.3%;
+  font-size:50px;
+  font-family: 'Satisfy' ,cursive;
 }
+
 .card{
   width:230px;
   height:300px;
