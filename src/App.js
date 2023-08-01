@@ -9,6 +9,8 @@ import {
 import axios from "axios";
 import CategoryPage from "./pages/CategoryPage";
 import React, { useEffect, useState } from "react";
+import Header from './Components/Header/Header';
+
 
 function App() {
   const [isLoading, setLoading] = useState(true);
@@ -25,6 +27,7 @@ function App() {
   if(!isLoading) {
     return (
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path = "/" element = {<CategoryPage categorList={categories}/>} />
           {/* <Route path = "/meal/category/:name" element = {<Category />} /> */}

@@ -17,7 +17,7 @@ body{
 .header{
  width:100%;
  height:40%;
- background-color:rgb(20, 73, 119);
+ background-color:rgb(20, 83, 138);
  display:flex;
  justify-content: space-around;
  align-items:center;
@@ -30,7 +30,24 @@ body{
  background-size:contain;
 
 }
-.header .search-box input{
+.tagline{
+  position: fixed;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-style: italic;
+}
+.input-wrap{
+  font-family: 'Satisfy' ,cursive;
+  font-size: 40px;
+}
+
+input{
+  width:15vw;
+  height:5vh;
+  font-size: 20px;
+  font-style:oblique;
+
+}
+.header .search-box{
   outline :none;
   border :none;
   width :450px;
