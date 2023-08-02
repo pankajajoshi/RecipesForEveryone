@@ -37,7 +37,7 @@ function App() {
   const handleScroll = (event) => {
     var header = document.getElementsByTagName("header")[0];
     var categoryTitle = document.getElementById('categoryTitle');
-    if(document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    if(document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
       header.style="display: none";
       header.height="0px";
       categoryTitle.classList.add('sticky');
