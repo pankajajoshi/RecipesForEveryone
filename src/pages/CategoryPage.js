@@ -7,7 +7,7 @@ const CategoryPage = ({categorList}) => {
     return(
         <div className='catpage-wrap'>
             
-            <div className='catpage-title'>Categories</div>
+            <div id='categoryTitle' className='catpage-title'>Categories</div>
         <main className='main-content'>
             <Categories categorList={categorList}/>
         </main>

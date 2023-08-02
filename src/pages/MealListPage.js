@@ -27,7 +27,7 @@ const MealListPage = () => {
         
             <div className='catpage-wrap'>
                 
-                <div className='catpage-title breadcrumb text-white'>
+                <div id='categoryTitle' className='catpage-title breadcrumb text-white'>
              
                 <Link to = "/" className='flex align-center'>
                     <AiFillHome size = {40} />

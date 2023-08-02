@@ -14,7 +14,7 @@ body{
 
 .header{
  width:100%;
- height:40%;
+ height:20%;
  background-color:rgb(20, 83, 138);
  display:flex;
  justify-content: space-around;
@@ -71,10 +71,10 @@ input{
     background-color:white;
     position: relative;
     top: 10px;
-    left: 10px;
-    bottom: 10px;
-    width: 79%;
-    margin-left: 10%;
+    /* left: 10px;
+    bottom: 10px; */
+    width: 95%;
+    margin-left: 5%;
     margin-top: 30%;
     right:10px;
      overflow-y: scroll;  
@@ -113,21 +113,21 @@ h1{
 }
 
 .catpage-wrap{
-  margin-top:20%;
+  margin-top:10%;
   padding:2rem;
   border-inline-color: rgb(183, 0, 255);
   align-content: center;
  }
 
 .catpage-title{
-  margin-top:0%;
-  margin-left:10%;
-  margin-right: 8%;
+  /* margin-top:0%;
+  margin-left:6%;
+  margin-right: 8%; */
   font-size:50px;
   font-family: 'Satisfy' ,cursive;
   background-color:lightcoral;
   position: relative;
-  width:80%;
+  width:100%;
   padding: 1rem;
 
 }
@@ -138,11 +138,11 @@ h1{
 
 .main-content{
   box-shadow: rgba(99, 99, 99, 0.09) 0px 2px 8px 0px;
-  height:40%;
+  /* height:40%; */
   position:relative;
   margin-top:-30%;
   text-align:center;
-  overflow-wrap: normal;
+  overflow-wrap:normal;
   
 }
 
@@ -167,25 +167,29 @@ img{
 .meal-body-info{
   margin-top: 68%;
 }
-div .breadcrumb.span{
+/* div .breadcrumb.span{
   float:right;
-}
+} */
 
 /* end Recipe modal */
 .end-recipe-modal {
-  overflow: scroll;
-  margin-top:40%;
+   /* overflow: scroll;  */
+  margin-top:20%;
   margin-left:10%;
   position:fixed;
-  transition: 200ms ease-in-out;
+  transition: 400ms ease-in-out;
   border-radius: 10px;
   text-align: center;
   font-size: 1em;
   z-index: 999 !important;
-  top: 12%;
+  top: 40%;
   left: 50%;
-  width:70%;
+  width:50%;
   align-items: center;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+     grid-gap:20px;
+     box-shadow: rgba(150, 70, 70, 0.09) 0px 2px 8px 0px;
+  /* overflow-y: scroll; */
 }
 
 .end-recipe-modal {
@@ -200,3 +204,48 @@ div .breadcrumb.span{
   
 }
 /*Recipe Details Css*/
+.details-img img{
+width:700px;
+height: 500px;
+
+}
+.recipe-title{
+  background-color: lightcoral;
+  font-size: 40px;
+  font-family: 'Satisfy',cursive;
+  float:right;
+  height:fit-content;
+}
+.recipe-container{
+  padding:1rem;
+  border: 1px solid #ccc;
+  background-color:white;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  width: 79%;
+  margin-left: 5%;
+  margin-top: 30%;
+  
+  right:10px;
+   /* overflow: scroll;   */
+   display:grid;
+   /* grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); */
+   grid-gap:20px;
+   box-shadow: rgba(99, 99, 99, 0.09) 0px 2px 8px 0px;
+}
+
+div h6{
+font-size:20px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.instruction{
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border:2px;
+  background-color: #ddd;
+  padding: 2rem;
+  
+}

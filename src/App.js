@@ -26,10 +26,31 @@ function App() {
       setLoading(false);
      });
   }, []);
-  
+  // scroll
+  const [scroller, initScroller] = useState(0);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  });
+  const handleScroll = (event) => {
+    var header = document.getElementsByTagName("header")[0];
+    var categoryTitle = document.getElementById('categoryTitle');
+    if(document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+      header.style="display: none";
+      header.height="0px";
+      categoryTitle.classList.add('sticky');
+    } else {
+      header.style="display: flex";
+      header.height="20%";
+      categoryTitle.classList.remove('sticky');
+    }
+  };
+  //
   if(!isLoading) {
     return (
-     
+     <div id="mainDiv" onScroll={handleScroll}>
       <BrowserRouter>
          <Header />
          
@@ -40,6 +61,7 @@ function App() {
         </Routes>
         
       </BrowserRouter>
+      </div>
     );
 } else{
   return(
