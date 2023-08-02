@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import CategoryPage from "./pages/CategoryPage";
+import MealListPage from "./pages/MealListPage"
+import RecipePage from "./pages/RecipePage"
 import React, { useEffect, useState } from "react";
 import Header from './Components/Header/Header';
 
@@ -26,12 +28,15 @@ function App() {
   
   if(!isLoading) {
     return (
+     
       <BrowserRouter>
-      <Header />
+         <Header />
         <Routes>
           <Route path = "/" element = {<CategoryPage categorList={categories}/>} />
-          {/* <Route path = "/meal/category/:name" element = {<Category />} /> */}
+          <Route path = "/meal/category/:name" element = {<MealListPage  />} /> 
+          <Route path = "/meal/:id" element = {<RecipePage />} />
         </Routes>
+        
       </BrowserRouter>
     );
 } else{

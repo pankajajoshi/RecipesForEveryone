@@ -5,14 +5,9 @@
 }
 
 body{
-  background-color: rgb(221, 233, 245);
+  background-color:white;
 }
 
-/* .main{
-  width:80%;
-  margin: 0 auto;
-  text-align:center;
-} */
 
 .header{
  width:100%;
@@ -28,24 +23,34 @@ body{
  background-image: url("./Components/bg1.png");
  font-size: 20px;
  background-size:contain;
-
 }
-.tagline{
+.tagline {
   position: fixed;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   font-style: italic;
 }
-.input-wrap{
-  font-family: 'Satisfy' ,cursive;
-  font-size: 40px;
-}
 
+.input-wrap{
+ background-color:whitesmoke;
+ border-radius:10px;
+ padding:0 15px;
+ box-shadow: 0px 0px 8px #ddd;
+ display:inline;
+ align-items: center;
+ row-gap: 10px;
+}
+.labeltextbox{
+font-family: 'Satisfy' ,cursive;
+font-size: 40px;
+
+}
 input{
   width:15vw;
   height:5vh;
   font-size: 20px;
   font-style:oblique;
-
+  border:none;
+  background-color: transparent;
 }
 .header .search-box{
   outline :none;
@@ -58,14 +63,19 @@ input{
 
 } 
 .container{
-  width:100%;
-  margin:100px auto;
-  display :flex;
+  width:400px;
+  height:300px;
+  margin:50px auto;
+
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(4,1fr);
+  margin-left: 10rem;
 
 }
 .mealList{
   width:320px;
-  heigth:100%;
+  height:100%;
   background-color: rgb(178, 110, 203);
   position:fixed;
   left: 0;
@@ -119,4 +129,31 @@ margin-top: 20%;
 h1{
   font-family: 'Satisfy', cursive;
   font-size: 100px;
+}
+
+.catpage-wrap{
+  margin-top:25%;
+  padding:2rem;
+  border-inline-color: orange;
+ }
+
+.catpage-title{
+  margin-top:0.5%;
+  margin-left:10rem;
+  margin-right: 8%;
+  font-size:50px;
+  font-family: 'Satisfy' ,cursive;
+  background-color: orange;
+  position: fixed;
+  width:70%;
+
+}
+
+
+.main-content{
+ 
+  height:40%;
+  position:relative;
+  margin-top: 40%;
+  text-align:center;
 }

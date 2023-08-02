@@ -12,11 +12,11 @@ const Categories = ({categorList}) => {
                 categories.map((category,index)=>{
                     const { idCategory: id, strCategory: title, strCategoryThumb: thumbnail} = category;
                     return(
-                        <Link to = {`/meal/category/${title}`} className = "category-itm align-center justify-center" key = {id}>
-                            <div className='category-itm-img h-100 w-100 flex align-center justify-center'>
+                        <Link to = {`/meal/category/${title}`} className = "category-itm" key = {id}>
+                            <div className='cat-img'>
                             <img src = {thumbnail} alt = {title} />
                             <div className='category-itm-title bg-orange'>
-                                <h3 className='text-white fs-11 fw-6 ls-1 text-uppercase'>{title}</h3>
+                                <h3 className='cat-title'>{title}</h3>
                             </div>
                             </div>
                         </Link>
