@@ -2,7 +2,7 @@ import React from 'react';
 import {FaSearch} from 'react-icons/fa';
 // import "./Header.scss";
 // import Navbar from "./Navbar";
-// import SearchForm from "./SearchForm";
+//import SearchForm from "./SearchForm";
 
 const Header = () => {
   return (

@@ -1,11 +1,14 @@
  *{
   padding :0;
   margin :0;
+  
 
 }
 
 body{
   background-color:white;
+  overflow: scroll; /* Show scrollbars */
+
 }
 
 
@@ -62,48 +65,25 @@ input{
 
 
 } 
-.container{
-  width:400px;
-  height:300px;
-  margin:50px auto;
-
-  display:grid;
-  gap:20px;
-  grid-template-columns:repeat(4,1fr);
-  margin-left: 10rem;
-
-}
-.mealList{
-  width:320px;
-  height:100%;
-  background-color: rgb(178, 110, 203);
-  position:fixed;
-  left: 0;
-  top: 0;
-  z-index: 11;
-
-}
-.meal-row1{
-  display:flex;
-  flex-direction: column;
-
+ .container {
+  padding:1rem;
+    border: 1px solid #ccc;
+    background-color:white;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    width: 79%;
+    margin-left: 10%;
+    margin-top: 30%;
+    right:10px;
+     overflow-y: scroll;  
+     display:grid;
+     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+     grid-gap:20px;
+     box-shadow: rgba(99, 99, 99, 0.09) 0px 2px 8px 0px;
 }
 
-.meal-row .row{
-display: inline-grid;
-gap:20px;
-grid-template-columns:repeat(4,1fr);
-margin-left: 20rem;
-margin-top: 20%;
-
-}
-.meal-row .text-heading{
-  margin-left:20rem;
-  margin-top: 18rem;
-  padding:0.3%;
-  font-size:50px;
-  font-family: 'Satisfy' ,cursive;
-}
 
 .card{
   width:230px;
@@ -116,9 +96,10 @@ margin-top: 20%;
   background-color: rgb(167, 156, 201);
 }
 
-.card img{
+.card img {
   width:100%;
   height: 80%;
+  
   
 }
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,600;1,400&family=Fuzzy+Bubbles&family=Roboto+Slab:wght@900&family=Satisfy&display=swap');
@@ -132,28 +113,90 @@ h1{
 }
 
 .catpage-wrap{
-  margin-top:25%;
+  margin-top:20%;
   padding:2rem;
-  border-inline-color: orange;
+  border-inline-color: rgb(183, 0, 255);
+  align-content: center;
  }
 
 .catpage-title{
-  margin-top:0.5%;
-  margin-left:10rem;
+  margin-top:0%;
+  margin-left:10%;
   margin-right: 8%;
   font-size:50px;
   font-family: 'Satisfy' ,cursive;
-  background-color: orange;
-  position: fixed;
-  width:70%;
+  background-color:lightcoral;
+  position: relative;
+  width:80%;
+  padding: 1rem;
 
 }
-
+/* .category-itm{
+  position:sticky;
+  width:fit-content;
+} */
 
 .main-content{
- 
+  box-shadow: rgba(99, 99, 99, 0.09) 0px 2px 8px 0px;
   height:40%;
   position:relative;
-  margin-top: 40%;
+  margin-top:-30%;
   text-align:center;
+  overflow-wrap: normal;
+  
 }
+
+.cat-img{
+  background-color:bisque
+}
+
+
+a .meal-body{
+  width:320px;
+  height:220px;
+  padding:1rem;
+  margin-top:-65%;
+}
+/* s */
+
+img{
+  width:320px;
+  height:220px;
+}
+
+.meal-body-info{
+  margin-top: 68%;
+}
+div .breadcrumb.span{
+  float:right;
+}
+
+/* end Recipe modal */
+.end-recipe-modal {
+  overflow: scroll;
+  margin-top:40%;
+  margin-left:10%;
+  position:fixed;
+  transition: 200ms ease-in-out;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1em;
+  z-index: 999 !important;
+  top: 12%;
+  left: 50%;
+  width:70%;
+  align-items: center;
+}
+
+.end-recipe-modal {
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 9999 !important;
+}
+
+.end-recipe-modal-title {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: left;
+  
+}
+/*Recipe Details Css*/

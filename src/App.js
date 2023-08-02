@@ -14,6 +14,7 @@ import React, { useEffect, useState } from "react";
 import Header from './Components/Header/Header';
 
 
+
 function App() {
   const [isLoading, setLoading] = useState(true);
   const[categories, setCategories] = useState();
@@ -31,6 +32,7 @@ function App() {
      
       <BrowserRouter>
          <Header />
+         
         <Routes>
           <Route path = "/" element = {<CategoryPage categorList={categories}/>} />
           <Route path = "/meal/category/:name" element = {<MealListPage  />} /> 

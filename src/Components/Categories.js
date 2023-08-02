@@ -15,7 +15,7 @@ const Categories = ({categorList}) => {
                         <Link to = {`/meal/category/${title}`} className = "category-itm" key = {id}>
                             <div className='cat-img'>
                             <img src = {thumbnail} alt = {title} />
-                            <div className='category-itm-title bg-orange'>
+                            <div className='category-itm'>
                                 <h3 className='cat-title'>{title}</h3>
                             </div>
                             </div>

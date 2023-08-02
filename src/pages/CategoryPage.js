@@ -6,6 +6,7 @@ const CategoryPage = ({categorList}) => {
     console.log('in categories: ', categorList);
     return(
         <div className='catpage-wrap'>
+            
             <div className='catpage-title'>Categories</div>
         <main className='main-content'>
             <Categories categorList={categorList}/>

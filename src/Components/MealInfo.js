@@ -11,7 +11,7 @@ export const MealInfo =(props, mealInfoDataList, setMealInfoData) => {
                 mealInfoDataList ? (
                     mealInfoDataList.meals.map((Meals,index)=>{
                         return(
-                            <div className="card" key={index}>
+                            <div className="container" key={index}>
                                 <img src={Meals.strMealThumb}
                                     alt={Meals.strMeal} />
                                 <div className="meal-info"></div>
