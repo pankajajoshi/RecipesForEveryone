@@ -14,14 +14,17 @@ const RecipePage = () => {
     const {id} = useParams();
     const [isLoading, setLoading] = useState(true);
     const[recipe, setRecipe] = useState();
+    const[category, setCategory] = useState('');
+    const[linkToCategory, setLinkToCategory] = useState();
   useEffect(() => {
-     console.log('Recipe page: in useEffect selected meal: ', id);
      axios.get('https://www.themealdb.com/api/json/v1/1/lookup.php?i='+id).then((response) => {
-      console.log('recipe: ', response.data);
+      //console.log('recipe: ', response.data);
+      setCategory(response.data.meals[0].strCategory);
       setRecipe(response.data);
+      setLinkToCategory('/meal/category/'+response.data.meals[0].strCategory)
       setLoading(false);
      });
-  }, []);
+  }, [category]);
 
     if(!isLoading) {
         return (
@@ -30,10 +33,13 @@ const RecipePage = () => {
                 {/* <MealListPage /> */}
                  <div className='end-recipe-modal' >
                 <div className='catpage-title end-recipe-modal-title'>
-                <Link to = "/" className='flex align-center'>
-                    <AiFillHome size = {40} />
-                  </Link> Recipe </div>
-                 
+                    <Link to = "/" className='flex align-center'>
+                        <AiFillHome size = {40} />
+                    </Link> &nbsp;&nbsp;&nbsp;
+                    <Link to={linkToCategory}>All {category} category</Link>
+                    &nbsp;&nbsp;&nbsp;
+                    Recipe
+                  </div>
                 <main className='main-content'>
                     <Recipe recipeDetails={recipe}/>
                 </main>

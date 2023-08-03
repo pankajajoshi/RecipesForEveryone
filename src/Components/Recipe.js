@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaUtensilSpoon } from "react-icons/fa";
-
+import ReactPlayer from 'react-player/youtube'
 import { AiOutlineCheckSquare } from 'react-icons/ai';
 
 const Recipe = ({ recipeDetails }) => {
@@ -11,11 +11,17 @@ const Recipe = ({ recipeDetails }) => {
     console.log(meal);
     let instructions = meal?.instructions?.split('\r\n');
     instructions = instructions?.filter(instruction => instruction.length > 1);
-    let ingredientsArr = [], measuresArr = [], singleMeal = {};
+    console.log("instructions: ",instructions);
+    let ingredientsArr = [], measuresArr = [], ingredientImagesArr=[], singleMeal = {};
     if (meal && meal?.length > 0) {
         for (let props in meal[0]) {
             if (props.includes('strIngredient')) {
-                if (meal[0][props]) ingredientsArr.push(meal[0][props]);
+                if (meal[0][props]) {
+                    var ingredSmall = encodeURIComponent(meal[0][props]+"-Small.png");
+                    var imgSrc = "https://www.themealdb.com/images/ingredients/"+ingredSmall;
+                    ingredientsArr.push(meal[0][props]);
+                    ingredientImagesArr.push(imgSrc);
+                }
             }
 
             if (props.includes('strMeasure')) {
@@ -38,11 +44,112 @@ const Recipe = ({ recipeDetails }) => {
         tags: meal[0]?.strTags,
         youtube: meal[0]?.strYoutube,
         ingredients: ingredientsArr,
+        ingredientImages: ingredientImagesArr,
         measures: measuresArr
     }
 
     return (
-       <></>
+        <>
+ 
+     <div className='section-wrapper'>
+            <div className='recipe-container'>
+        
+            <div className='details-head grid'>
+                            <h3 className='title text-orange'>{singleMeal?.title}</h3>
+                          </div>
+                            <div className='details-img'>
+                                <img src={singleMeal?.thumbnail} alt="" className='img-cover' />
+                            </div>
+                            <div className='instructions'>
+                                <h6 className='fs-16'>Instructions:</h6>
+                                <ul className='grid'>
+                                    {
+                                        [singleMeal?.instructions]?.map((instruction, idx) => (
+                                            <li key={idx} className="fs-14">
+                                                <AiOutlineCheckSquare size={18} className="text-orange li-icon" />
+                                                <span className='li-text'>{instruction}</span>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                                <div class='followAlong_video'>
+                                    <h6 className='fs-16'>Follow Along:</h6>
+                                    <ReactPlayer url={singleMeal?.youtube} />
+                                </div>
+                            </div>
+                        <div className='details-head grid'>
+                           &nbsp;
+                          </div>
+                                
+                                    {/* <div className='detailrecipe-category-name'>
+                                        <span className='text-uppercase '>category: &nbsp;</span>
+                                        <span className='text-uppercase'>{singleMeal?.category}</span>
+                                    </div>  */}
+
+                                    {/* <div className='source flex align-center'>
+                                        <span className='fw-7'>Source: &nbsp;</span>
+                                        <a href={singleMeal.source}>
+                                            {singleMeal.source ? (singleMeal?.source).substring(0, 40) + "..." : "Not found"}
+                                        </a>
+                                   
+                                </div>  */}
+
+                                {/* <div className='tags flex align-start flex-wrap'>
+                                    <h6 className='fs-16'>Tags:</h6>
+                                    <ul className='flex align-center flex-wrap'>
+                                        {
+                                            tags?.map((tag, idx) => (<li key={idx} className="fs-14">{tag}</li>))
+                                        }
+                                    </ul>
+                                </div> */}
+
+                                <section className='section_ingredients'>
+                                    <div class="ingredients_header">
+                                        <h2 class="ingredients-header">Ingredients</h2>
+                                    </div>
+                                    <ul class="ingredients__list">
+                                    {
+                                            singleMeal?.ingredients?.map((ingredient, idx) => (
+                                                <li key={idx} className="ingredient">
+                                                    <div className="ingredientImg">
+                                                        <img src={ingredientImagesArr[idx]} alt={ingredient} class="ingredientImg"/>
+                                                    </div>
+                                                    <div class="ingredient_text-wrapper">
+                                                        <p class="ingredient__name">{ingredient}</p>
+                                                        <p class="ingredient__amount">{measuresArr[idx]}</p>
+                                                    </div>
+                                                    {/* <span className='text-capitalize text-white fs-15'>{ingredient}</span> */}
+                                                </li>
+                                            ))
+                                        }
+                                    </ul>
+                                </section>
+
+                            
+                           
+                       
+
+                        {/* <div className='details-body'>
+                            
+
+                            <div className='instructions'>
+                                <h6 className='fs-16'>Instructions:</h6>
+                                <ul className='grid'>
+                                    {
+                                        [singleMeal?.instructions]?.map((instruction, idx) => (
+                                            <li key={idx} className="fs-14">
+                                                <AiOutlineCheckSquare size={18} className="text-orange li-icon" />
+                                                <span className='li-text'>{instruction}</span>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+               */}
+                </div>
+         </div>
+         </>
       )
 }
 

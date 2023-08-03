@@ -40,11 +40,15 @@ function App() {
     if(document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
       header.style="display: none";
       header.height="0px";
-      categoryTitle.classList.add('sticky');
+      if(categoryTitle){
+        categoryTitle.classList.add('sticky');
+      }
     } else {
       header.style="display: flex";
       header.height="20%";
-      categoryTitle.classList.remove('sticky');
+      if(categoryTitle){
+        categoryTitle.classList.remove('sticky');
+      }
     }
   };
   //
