@@ -4,10 +4,6 @@ import Recipe from '../Components/Recipe';
 import { useParams } from 'react-router-dom';
 import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { BiChevronsRight } from "react-icons/bi";
-import { AiOutlineCheckSquare } from 'react-icons/ai';
-import MealListPage from "./MealListPage";
-
 
 
 const RecipePage = () => {

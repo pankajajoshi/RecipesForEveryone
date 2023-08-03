@@ -1,5 +1,6 @@
 import React from 'react';
 import {FaSearch} from 'react-icons/fa';
+import SearchAutoComplete  from '../SearchAutoComplete';
 // import "./Header.scss";
 // import Navbar from "./Navbar";
 //import SearchForm from "./SearchForm";
@@ -15,12 +16,12 @@ const Header = () => {
          </div> 
          
             <div className='input-wrap'>
-                <div className="labeltextbox">
+                {/* <div className="labeltextbox">
                     <label> Search </label>
                 </div>
                 <FaSearch className="search-icon" /> 
-                <input type="search" placeholder='search here....' />
-            
+                <input type="search" placeholder='search here....' /> */}
+              <SearchAutoComplete />
             </div>
       
     </header>
