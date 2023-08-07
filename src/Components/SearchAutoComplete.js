@@ -7,6 +7,7 @@ const SearchAutoComplete = ({ setResults }) => {
   const [input, setInput] = useState("");
   const[searchAutoComplete, setSearchAutoComplete] = useState();
   const [isLoading, setLoading] = useState(true);
+  const [showResults, setShowResults] = useState(false);
 
 //   useEffect(() => {
 //     console.log('input ', input);
@@ -16,6 +17,7 @@ const SearchAutoComplete = ({ setResults }) => {
    
 //     });
 //  }, []);
+
 
   const setData = (input) => {
     console.log('input ', input);
@@ -29,11 +31,22 @@ const SearchAutoComplete = ({ setResults }) => {
   const handleChange = (value) => {
     console.log("value",value, '  len: ', value.length);
     setInput(value);
+    setShowResults(true);
     if(value && value.length >= 3){
         setData(value);
     }
     
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();  
+    setShowResults(current => !current);
+  }
+
+  document.addEventListener('click', e => {
+    if (e.target.className !== 'search-form') {
+      setShowResults(false);  
+    }   
+  });
 
 
   return (
@@ -43,7 +56,7 @@ const SearchAutoComplete = ({ setResults }) => {
         <label>Search</label>
         </div>
      <div>
-     <form action="/form/submit" method="GET">
+     <form onClick={handleSubmit}>
       <FaSearch id="search-icon" />
       
       <input type="search"
@@ -53,7 +66,7 @@ const SearchAutoComplete = ({ setResults }) => {
       />
       {/* <input type="submit" name="Submit" className="submit" value="submit" /> */}
       </form>
-      <div className="searchResults">
+      <div className={showResults ? "searchResults" : "searchResults hide" }>
       {
             searchAutoComplete ? (
                 searchAutoComplete.map((mealItem,index)=>{

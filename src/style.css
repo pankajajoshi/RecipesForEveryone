@@ -211,7 +211,7 @@ border:1px solid black;
 
 
 
-  .details-img:hover { flex: 1 1 30%; }
+  .details-img:hover { flex: 1 1 50%; }
   .details-img:hover > img {
     width: 100%;
     height: 100%;
@@ -427,6 +427,7 @@ input[type=text] {
 .searchResults div:hover {
   /*when hovering an item:*/
   background-color: #e9e9e9;
+  
 }
 .searchResults:active{
   /*when navigating through the items using the arrow keys:*/
@@ -434,3 +435,11 @@ input[type=text] {
   color: #ffffff;
 
 }
+.hide{
+  display :none;
+
+}
+/* .searchResults :hover + .hide{
+  display:block;
+  color:orangered;
+} */
