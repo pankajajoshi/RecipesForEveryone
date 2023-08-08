@@ -78,6 +78,18 @@ https://www.figma.com/file/m9VmLPfgy21mThtc5DUudr/Recipes-for-Everyone?type=whit
   </li>
 </ul>
 
+<hr />
+<h3>Future App Goals :</h3>
+<ul>
+	<li>
+		Add ratings: Adding a star rating scale to select how they want to rate the recipe.
+	</li>
+ <li>
+ Add Calorie Count: Adding calories circle scale  to all recipes , to measure the cal intake from each recipe
+	 
+ </li>
+</ul>
+
 
 
 
