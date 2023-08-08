@@ -38,6 +38,7 @@ https://www.figma.com/file/m9VmLPfgy21mThtc5DUudr/Recipes-for-Everyone?type=whit
   <li>Javascript</li>
    <li> Css </li>
     <li> API </li>
+    <li>HTML</li>
   
 </ul>
 
