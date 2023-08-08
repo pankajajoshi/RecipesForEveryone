@@ -43,7 +43,7 @@ https://www.figma.com/file/m9VmLPfgy21mThtc5DUudr/Recipes-for-Everyone?type=whit
 
 <hr/>
 
-<h4>Implementation :</h4>
+<h3>Implementation :</h3>
 <ul>
   <li>
   <h5>Step 1: </h5>List all the meal categories using below API:
