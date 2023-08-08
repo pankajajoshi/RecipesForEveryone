@@ -20,17 +20,21 @@ Recipe for Everyone brings people together through food, culture, and the joy of
 
 <hr />
 
+<h3>Surf!! Through Applications like the Gif below</h3>
+
 ![](recipe.gif)
 
 <hr />
 
-<h4>Design/WrireFrame Link for Recipes</h4>
+<h3>Design/WrireFrame Link for Recipes</h3>
+
+<hr />
 
 https://www.figma.com/file/m9VmLPfgy21mThtc5DUudr/Recipes-for-Everyone?type=whiteboard&node-id=0%3A1&t=1KvF5gCUMlTdyWqP-1
 
 <hr />
 
-<h4>Technologies :</h4>
+<h3>Technologies :</h3>
 <hr />
 <ul>
   <li>
