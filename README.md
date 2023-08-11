@@ -94,7 +94,9 @@ https://www.figma.com/file/m9VmLPfgy21mThtc5DUudr/Recipes-for-Everyone?type=whit
 	 
  </li>
 </ul>
+
 <hr />
+
 <h3>Git hub Pages Link : </h3> https://pankajajoshi.github.io/RecipesForEveryone/
 
 
